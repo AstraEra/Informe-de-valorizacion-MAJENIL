@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Majenil Group - Valorización</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f3f4f6;
+      }
+
+      /* Custom class for thin borders */
+      .custom-thin-border {
+        border-width: 0.5px;
+        border-style: solid;
+        border-color: #000;
+      }
+
+      /* Print Specific Styles to hide UI and format A4 Landscape */
+      @media print {
+        @page {
+          margin: 0;
+          size: A4 landscape;
+        }
+
+        /* Extremely thin borders for native print */
+        .custom-thin-border {
+          border-width: 0.1mm !important;
+          border-style: solid !important;
+          border-color: #000 !important;
+        }
+        
+        /* Reset app layout for print flow */
+        body, #root, main, #root > div {
+          background-color: white !important;
+          display: block !important;
+          height: auto !important;
+          min-height: auto !important;
+          overflow: visible !important;
+          width: 100% !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+
+        .no-print {
+          display: none !important;
+        }
+
+        /* Hide the screen background/shadows and ensure pages take full size */
+        .print-sheet {
+          box-shadow: none !important;
+          margin: 0 !important;
+          width: 297mm !important; /* Explicit A4 Landscape width */
+          height: 210mm !important; /* Explicit A4 Landscape height */
+          max-width: none !important;
+          min-height: 210mm !important;
+          padding: 10mm !important; /* Reduced padding to maximize space and minimize whitespace */
+          page-break-after: always !important; /* Force break after each sheet */
+          page-break-inside: avoid !important;
+          position: relative !important;
+          left: 0 !important;
+          top: 0 !important;
+        }
+        
+        .print-sheet:last-child {
+          page-break-after: auto !important;
+        }
+
+        /* Ensure background colors in tables print */
+        * {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "html2canvas": "https://esm.sh/html2canvas@1.4.1",
+    "jspdf": "https://esm.sh/jspdf@2.5.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

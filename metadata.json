@@ -1,0 +1,5 @@
+{
+  "name": "Majenil Group - Generador de Valorizaciones",
+  "description": "Sistema interactivo para generar informes de valorización de alquiler de vehículos con selección de días trabajados, cálculo de IGV y exportación a PDF.",
+  "requestFramePermissions": []
+}
